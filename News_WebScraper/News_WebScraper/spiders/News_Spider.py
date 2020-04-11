@@ -23,6 +23,7 @@ def blog_parser(hlink, querylist):
         text = p.get_text()
         replace_punctuation = str.maketrans(string.punctuation, ' '*len(string.punctuation))
         text = text.translate(replace_punctuation)
+        text = text.lower()
         wordlist = text.split()
         for query in querylist:
             counter = counter + wordlist.count(query)
